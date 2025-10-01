@@ -1,0 +1,18 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #343a40;
+}
+
+.nav-item {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.nav-item:hover {
+  color: #007bff;
+}

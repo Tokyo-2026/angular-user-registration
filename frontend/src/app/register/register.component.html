@@ -1,0 +1,41 @@
+<div class="register-container">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+    <h2>Register</h2>
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <input id="fullName" formControlName="fullName" placeholder="Enter your full name">
+      @if (registerForm.get('fullName')?.invalid && registerForm.get('fullName')?.touched) {
+        <div class="error">Full name is required.</div>
+      }
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" placeholder="Enter your email">
+      @if (registerForm.get('email')?.invalid && registerForm.get('email')?.touched) {
+        <div class="error">
+          @if (registerForm.get('email')?.errors?.['required']) {
+            <div>Email is required.</div>
+          }
+          @if (registerForm.get('email')?.errors?.['email']) {
+            <div>Please enter a valid email.</div>
+          }
+        </div>
+      }
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" placeholder="Enter your password">
+      @if (registerForm.get('password')?.invalid && registerForm.get('password')?.touched) {
+        <div class="error">
+          @if (registerForm.get('password')?.errors?.['required']) {
+            <div>Password is required.</div>
+          }
+          @if (registerForm.get('password')?.errors?.['minlength']) {
+            <div>Password must be at least 6 characters long.</div>
+          }
+        </div>
+      }
+    </div>
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+  </form>
+</div>

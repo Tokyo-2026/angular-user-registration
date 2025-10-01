@@ -1,0 +1,15 @@
+<div class="users-container">
+  <h1>Registered Users</h1>
+  <div class="users-grid">
+    @for (user of users(); track user.id) {
+      <div class="user-card">
+        <div class="user-card-header">
+          <h2>{{ user.fullName }}</h2>
+        </div>
+        <div class="user-card-body">
+          <p>{{ user.email }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>
