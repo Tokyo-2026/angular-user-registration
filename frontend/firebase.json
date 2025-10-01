@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/frontend/browser",
+    "public": "dist/myapp/browser",
     "ignore": [
       "firebase.json",
       "**/.firebaserc",
